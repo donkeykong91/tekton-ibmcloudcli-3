@@ -8,6 +8,8 @@ spec:
       description: Username of the IBM Cloud account
     - name: ibmcloud-password
       description: Password of the IBM Cloud account
+    - name: ibmcloud-apikey
+      description: API key of the IBM Cloud account
     - name: repository-test
       description: The test repository for images
     - name: registry-namespace-staging
@@ -93,6 +95,8 @@ spec:
             value: $(params.ibmcloud-username)
           - name: ibmcloud-password
             value: $(params.ibmcloud-password)
+          - name: ibmcloud-apikey
+            value: $(params.ibmcloud-apikey)
           - name: repository-test
             value: $(params.repository-api)
           - name: registry-namespace-staging

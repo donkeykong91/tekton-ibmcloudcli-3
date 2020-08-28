@@ -10,6 +10,9 @@ spec:
     - name: ibmcloud-password
       description: Password of the IBM Cloud account
       default: ""
+    - name: ibmcloud-apikey
+      description: API key of the IBM Cloud account
+      default: ""
     - name: registry-url
       description: The url of the registry
       default: ""
@@ -296,6 +299,8 @@ spec:
           value: $(params.ibmcloud-username)
         - name: ibmcloud-password
           value: $(params.ibmcloud-password)
+        - name: ibmcloud-apikey
+          value: $(params.ibmcloud-apikey)
         - name: registry
           value: $(params.registry-url)
         - name: namespace
