@@ -7,9 +7,9 @@ spec:
   - name: ibmcloud-username
     description: Username of the IBM Cloud account
     default: ""
-  - name: ibmcloud-password
-    description: Password of the IBM Cloud account
-    default: ""
+  # - name: ibmcloud-password
+  #   description: Password of the IBM Cloud account
+  #   default: ""
   - name: region
     description: The region of where the registry is located
     default: ""
