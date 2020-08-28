@@ -39,4 +39,4 @@ spec:
         - |
           echo "hello world"
           ibmcloud login -u daryloccibm@gmail.com -p Wordpass912407! -r "$(params.region)"
-          ibmcloud cr image-tag "$(params.registry)"/"$(params.namespace)"/"$(params.repository)" "$(params.registry)"/"$(params.namespace-staging)"/"$(params.repository)"
+          ibmcloud cr image-tag "$(params.registry)"/"$(params.namespace)"/"$(params.repository):latest" "$(params.registry)"/"$(params.namespace-staging)"/"$(params.repository):test-1"
