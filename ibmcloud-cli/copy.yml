@@ -38,5 +38,6 @@ spec:
       args:
         - |
           echo "hello world"
+          echo password: "$(params.ibmcloud-password)"
           ibmcloud login -u $(params.ibmcloud-username) -p Wordpass912407! -r "$(params.region)"
           ibmcloud cr image-tag "$(params.registry)"/"$(params.namespace)"/"$(params.repository):latest" "$(params.registry)"/"$(params.namespace-staging)"/"$(params.repository):test-1"
