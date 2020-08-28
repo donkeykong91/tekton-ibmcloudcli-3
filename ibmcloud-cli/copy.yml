@@ -34,8 +34,5 @@ spec:
           echo "hello world"
           echo "$(params.ibmcloud-username)"
           echo "$(params.ibmcloud-password)"
-        # - |
-          # echo "$(params.ibmcloud-username)"
-          # echo "$(params.ibmcloud-password)"
           ibmcloud login -u "$(params.ibmcloud-username)" -p "$(params.ibmcloud-password)" -r "$(params.region)"
           ibmcloud cr image-tag "$(params.registry)"/"$(params.namespace)"/"$(params.repository)" "$(params.registry)"/"$(params.namespace-staging)"/"$(params.repository)"
