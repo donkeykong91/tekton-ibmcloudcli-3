@@ -40,5 +40,5 @@ spec:
       command: ["/bin/bash", "-c"]
       args:
         - |
-          ibmcloud login --apikey $(params.ibmcloud-apikey)
+          ibmcloud login --apikey "$(params.ibmcloud-apikey)"
           ibmcloud cr image-tag "$(params.registry)"/"$(params.namespace)"/"$(params.repository):latest" "$(params.registry)"/"$(params.namespace-staging)"/"$(params.repository):test-1"
