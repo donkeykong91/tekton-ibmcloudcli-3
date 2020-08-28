@@ -92,7 +92,7 @@ spec:
           - name: ibmcloud-username
             value: $(params.ibmcloud-username)
           - name: ibmcloud-password
-            value: $(params.ibmcloud-passwords)
+            value: $(params.ibmcloud-password)
           - name: repository-test
             value: $(params.repository-api)
           - name: registry-namespace-staging
