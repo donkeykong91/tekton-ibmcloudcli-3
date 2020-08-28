@@ -27,12 +27,18 @@ spec:
     default: ""
   steps:
     - name: ibmcloud-icr-copy
+      env:
+        - name: ibmcloud-password
+          valueFrom:
+            secretKeyRef:
+              name: secure-properties
+              key: secret_key
       image: ibmcom/pipeline-base-image
       command: ["/bin/bash", "-c"]
       args:
         - |
           echo "hello world"
           echo "$(params.ibmcloud-username)"
-          echo "$(params.ibmcloud-password)"
-          ibmcloud login -u "$(params.ibmcloud-username)" -p "$(params.ibmcloud-password)" -r "$(params.region)"
+          echo $ibmcloud-password
+          ibmcloud login -u "$(params.ibmcloud-username)" -p $ibmcloud-password -r "$(params.region)"
           ibmcloud cr image-tag "$(params.registry)"/"$(params.namespace)"/"$(params.repository)" "$(params.registry)"/"$(params.namespace-staging)"/"$(params.repository)"
