@@ -6,8 +6,8 @@ spec:
   params:
     - name: ibmcloud-username
       description: Username of the IBM Cloud account
-    # - name: ibmcloud-password
-    #   description: Password of the IBM Cloud account
+    - name: ibmcloud-password
+      description: Password of the IBM Cloud account
     - name: repository-test
       description: The test repository for images
     - name: registry-namespace-staging
@@ -63,13 +63,13 @@ spec:
     # - name: dev-cluster-namespace
     #   description: namespace dev
   resourcetemplates:
-    - apiVersion: v1
-      kind: Secret
-      metadata:
-        name: secret-object
-      type: Opaque
-      stringData:
-        secret_key: $(params.ibmcloud-password)  
+    # - apiVersion: v1
+    #   kind: Secret
+    #   metadata:
+    #     name: secret-object
+    #   type: Opaque
+    #   stringData:
+    #     secret_key: $(params.ibmcloud-password)  
     - apiVersion: v1
       kind: PersistentVolumeClaim
       metadata:
@@ -91,8 +91,8 @@ spec:
         params:
           - name: ibmcloud-username
             value: $(params.ibmcloud-username)
-          # - name: ibmcloud-password
-          #   value: $(params.ibmcloud-passwords)
+          - name: ibmcloud-password
+            value: $(params.ibmcloud-passwords)
           - name: repository-test
             value: $(params.repository-api)
           - name: registry-namespace-staging
